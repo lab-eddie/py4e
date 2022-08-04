@@ -9,23 +9,6 @@
 
 # 입력받은 숫자를 => list, index -3 마다 "," , list를 str => print
 
-# inp = input("숫자를 입력하세요")
-# convert_inp = [x for x in str(inp)]
-# print(convert_inp)
-
-# cipher = 0
-# a = len(convert_inp) % 3
-# if a == 0:
-#     a = 3
-# for i in convert_inp:
-    
-#     if cipher % 4 == a:
-                   
-#         convert_inp[cipher:cipher] = [","]
-#     cipher += 1
-
-# s = "".join(convert_inp)
-# print(s)
 
 def make_comma(inp):
     # 자릿수를 3으로 나눴을때 나머지값이 ","가 찍히는 index값인것을 이용

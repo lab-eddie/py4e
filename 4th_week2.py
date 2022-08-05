@@ -13,15 +13,19 @@
 # count_word(a, "습니다")
 # 2
 
+def count_word(a, word):
+    with open("4th_week2.txt","w") as f:
+        f.write()
 
-a = """안녕하세요. 
-반갑습니다. 파이썬 공부는 정말 재밌습니다."""
+    lines = f.readlines()
+    for line in lines:
+        print(line)
 
-a = a.split(" ")
-count = 0
+count_word(a, "습니다")
+# count = 0
 
-for i in a :
-    if "습니다" in i :
-        count += 1
+# for i in a :
+#     if "습니다" in i :
+#         count += 1
     
-print(count)
+# print(count)

@@ -29,22 +29,21 @@
 # 잘못 쓴 번호: 111-1111-1111
 
 
-import re
-
 def wrong_guest_book(guest_book):
-    p_num = re.compile("010-")
     with open("guest_book.txt","w") as f:
         f.write(guest_book)
     with open("guest_book.txt","r") as f:
-        a = f.readlines()
-        for i in a :
-            if p_num.match(i):
-                print(i)
-            else:
-                print("not good")
+        words = f.readlines()
+    wrong = []
+    for i in words:
+        result = i.find("010-",-13,-1)
+        if result == -1 :
+            wrong.append(i)
+        
+    for a in wrong:
+        print(f"잘못 쓴 사람 : {a[:2]}\n잘못 쓴 번호 : {a[3:]}")
             
             
-
 guest_book = """김갑,123456789
 이을,010-1234-5678
 박병,010-5678-111

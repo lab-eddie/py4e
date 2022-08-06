@@ -17,8 +17,38 @@
 # 번호가 - 로 구분이 되어 있음
 # -를 포함하여 길이가 13임
 
+# wrong_guest_book(guest_book)
+
+# 잘못 쓴 사람: 김갑
+# 잘못 쓴 번호: 123456789
+
+# 잘못 쓴 사람: 박병
+# 잘못 쓴 번호: 010-5678-111
+
+# 잘못 쓴 사람: 최정
+# 잘못 쓴 번호: 111-1111-1111
+
+
+import re
+
+def wrong_guest_book(guest_book):
+    p_num = re.compile("010-")
+    with open("guest_book.txt","w") as f:
+        f.write(guest_book)
+    with open("guest_book.txt","r") as f:
+        a = f.readlines()
+        for i in a :
+            if p_num.match(i):
+                print(i)
+            else:
+                print("not good")
+            
+            
+
 guest_book = """김갑,123456789
 이을,010-1234-5678
 박병,010-5678-111
 최정,111-1111-1111
 정무,010-3333-3333"""
+
+wrong_guest_book(guest_book)

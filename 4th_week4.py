@@ -8,3 +8,26 @@
 
 # 주민등록번호 조건을 만족하지 않는 수가 입력되면 "잘 못된 번호입니다"를 출력해주세요.
 
+id_num = input("주민등록번호를 입력해주세요 (예 : 123456-1234567) : " )
+
+
+if int(id_num[0:2]) <= 22 :
+    millennium = input("당신은 2000년 이후 출생자 입니까? 맞으면 o 틀리면 x : ")
+    if millennium == "o":
+        year = f"20{id_num[0:2]}"
+    else :
+        print("잘못된 번호입니다.")
+        quit()
+else:
+    year = f"19{id_num[0:2]}"
+
+month = id_num[2:4]
+
+if int(id_num[7]) == 1 or int(id_num[7]) == 3:
+    s = "남자"
+elif int(id_num[7]) == 2 or int(id_num[7]) == 4:
+    s = "여자"
+else :
+    print("잘못된 번호입니다.")
+    
+print(f"당신은 {year}년 {month}월생이고 {s}입니다")

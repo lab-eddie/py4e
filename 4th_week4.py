@@ -24,15 +24,13 @@ def check_id():
         elif int(id_num[0:2]) <= 22 : # 2000년 이후의 주민번호인지 확인 후에 s값에 성별 값 입력
             millennium = input("당신은 2000년 이후 출생자 입니까? 맞으면 o 틀리면 x : ")
             if millennium == "o":
-                if int(id_num[7]) == 3:
-                    s = "남자"
-                elif int(id_num[7]) == 4:
-                    s = "여자"
-                else :
-                    wrong_num()    
-                year = f"20{id_num[0:2]}" # 출생년도 변환
-            else :
-                wrong_num()
+                if int(id_num[7]) == 3: s = "남자"
+                elif int(id_num[7]) == 4: s = "여자"
+                year = f"20{id_num[0:2]}" # 출생년도 변환      
+            elif millennium =="x":
+                if int(id_num[7]) == 1: s = "남자"
+                elif int(id_num[7]) == 2: s = "여자"
+                year = f"19{id_num[0:2]}" # 출생년도 변환
         else: # 2000년 이전 출생자의 성별값 s에 담기
             if int(id_num[7]) == 1:
                 s = "남자"

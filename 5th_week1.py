@@ -26,3 +26,24 @@
 # 컴퓨터 : 7
 # 현재 숫자 : 7
 
+import random
+
+game = list(range(1,32))
+while True:
+    my = list(map(int, input("My turn - 숫자를 입력하세요 : ").split()))
+    if len(my) > 3: continue
+    print(my)
+    
+    for i in my:
+        if i == game[0]:
+            game.remove(game[0])
+        else :
+            print("입력값을 확인해주세요")
+            continue
+    print(f"현재 숫자 : {game[0]-1}")
+    com = random.randint(1,3)
+    for n in list(range(com)):
+        print(f"컴퓨터 : {game[0]}")
+        game.remove(game[0])
+    
+    print(f"현재 숫자 : {game[0]-1}\n")

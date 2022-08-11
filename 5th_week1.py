@@ -5,6 +5,7 @@ def bs31():
     
     while True:
         my = list(map(int, input("My turn - 숫자를 입력하세요(최대 3개): ").split())) # 입력값을 int ,list 로 바로 변환
+        
         if len(my) <= 3 and my == game[:len(my)]: # 입력값이 3개 이하이고 입력값과 남은 숫자들을 매치해서 잘못된 숫자가 없는지 체크
             for i in my:
                 game.remove(i) # 차례로 남은 숫자들을 제거
@@ -19,5 +20,5 @@ def bs31():
         else :
             print("입력값이 잘못되었습니다\n")
             continue
-
+        
 bs31()

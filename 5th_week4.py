@@ -12,3 +12,9 @@
 # ✅ 출력 예시
 # after_100(6,21,"월")
 # 6월 21일 월요일부터 100일 뒤는 9월 28일 화요일
+
+import datetime
+
+a, b = map(int,input().split())
+the_day = datetime.time(a,b,"%m%d")
+print(the_day)

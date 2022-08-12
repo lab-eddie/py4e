@@ -1,5 +1,4 @@
-game = list(range(1,32))
-print(game[:3])
-a = [1,2,3]
-if a in game:
-    print("a")
+a = [1,2]
+b = [3,4]
+a.append(b)
+print(len(a))

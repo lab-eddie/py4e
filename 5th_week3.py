@@ -30,12 +30,25 @@
 # 이미 예측에 사용한 숫자입니다
 # 6차 시도
 
+# 플레이어는 0~100 까지 리스트 안에서 먼저 검사를 하고 부르는 숫자를 리스트에서 제외시키기
+
 import random
 
 number = random.sample(range(0,100),3)
 number.sort()
-minimum = number[0]
-middle = number[1]
-maximum = number[2]
+minmax = "최소","중간","최대"
+result = dict(zip(number,minmax))
+print(result)
 
-player = int(input("숫자를 입력해주세요! : "))
+round_num = 0
+while True:
+    round_num += 1
+    print(f"{round_num}차 시도")
+    player = int(input("숫자를 입력해주세요! : "))
+    if player not in number:
+        print(f"{player} 은(는) 없습니다.")
+    else :
+        for i in result.keys():
+            if player == i:
+                print(f"{player}는 {result[i]}값 입니다")
+                

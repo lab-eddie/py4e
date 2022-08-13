@@ -13,8 +13,11 @@
 # after_100(6,21,"월")
 # 6월 21일 월요일부터 100일 뒤는 9월 28일 화요일
 
-import datetime
+thirty_one = [1,3,5,7,8,10,12]
+week_day = ["월","화","수","목","금","토","일"]
+a=week_day.index("토")
+the_week = week_day[(a+1)%7]
+days = []
 
-a, b = map(int,input().split())
-the_day = datetime.time(a,b,"%m%d")
-print(the_day)
+
+print(the_week)

@@ -29,3 +29,13 @@
 # 숫자를 예측해보세요 : 9
 # 이미 예측에 사용한 숫자입니다
 # 6차 시도
+
+import random
+
+number = random.sample(range(0,100),3)
+number.sort()
+minimum = number[0]
+middle = number[1]
+maximum = number[2]
+
+player = int(input("숫자를 입력해주세요! : "))

@@ -33,11 +33,12 @@
 # 플레이어는 0~100 까지 리스트 안에서 먼저 검사를 하고 부르는 숫자를 리스트에서 제외시키기
 
 import random
-
-number = random.sample(range(0,100),3)
-number.sort()
-minmax = "최소","중간","최대"
-result = dict(zip(number,minmax))
+numbers = list(range(0,100))
+the_number = random.sample(range(0,100),3)
+the_number.sort()
+print(the_number)
+maximin = "최소","중간","최대"
+result = dict(zip(the_number,maximin))
 print(result)
 
 round_num = 0
@@ -45,8 +46,8 @@ while True:
     round_num += 1
     print(f"{round_num}차 시도")
     player = int(input("숫자를 입력해주세요! : "))
-    if player not in number:
-        print(f"{player} 은(는) 없습니다.")
+    if player not in the_number:
+        print(f"{numbers.pop(player)} 은(는) 없습니다.")
     else :
         for i in result.keys():
             if player == i:

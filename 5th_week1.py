@@ -33,6 +33,5 @@ def bs31():
             print(f"현재 숫자 : {game[0]-1}\n")
         else :
             print("입력값이 잘못되었습니다\n")
-            continue
-        
+            continue        
 bs31()

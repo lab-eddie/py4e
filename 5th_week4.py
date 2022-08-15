@@ -13,11 +13,31 @@
 # after_100(6,21,"월")
 # 6월 21일 월요일부터 100일 뒤는 9월 28일 화요일
 
-thirty_one = [1,3,5,7,8,10,12]
-week_day = ["월","화","수","목","금","토","일"]
-a=week_day.index("토")
-the_week = week_day[(a+1)%7]
-days = []
+def after_100(month,day,week):
+    week_day = ["월","화","수","목","금","토","일"]
+    week_100 = week_day[(week_day.index(week)+1)%7]
 
+    # a = 31+28+31+30+31+30+31+31+30+31+30+31
+    # 6,21
+    days = [31,28,31,30,31,30,31,31,30,31,30,31]
+    year = list(range(1,366))
+    now_day = 0
+    for i in range(month-1):
+        now_day += days[i]
+    print(now_day)
+    now_day += day
+    print(now_day)
+    day_100 = now_day + 99
+    month = 0
+    for n in days:
+        if day_100 < 0:
+            break
+        day_100 -= n
+        month += 1
+    print(month,day_100)
+        
+        
 
-print(the_week)
+    # print(f"{month}월 {day}일 {week}요일부터 100일 뒤는 {month_100}월 {day_100}일 {week_100}요일")
+
+after_100(6,21,"월")

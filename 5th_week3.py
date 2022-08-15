@@ -14,8 +14,7 @@ def guess_numbers():
         except:
             print("입력값이 잘못되었습니다. 다시입력해주세요")
             continue
-        
-        
+    
         if player < 1 or player >= 101: # 1~100 까지 숫자 범위가 아닐때 걸러주기
             print("올바른 값을 입력해주세요\n")
             continue

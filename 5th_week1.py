@@ -4,9 +4,12 @@ def bs31():
     game = list(range(1,32)) # 31까지 범위 list만들기
     
     while True:
-        try: # 입력값이 없을때나 숫자가 아닐때 체크해주는 부분
-            my = list(map(int, input("My turn - 숫자를 입력하세요(최대 3개): ").split())) # 입력값을 int ,list 로 바로 변환
-            a = my[0]
+        user = input("My turn - 숫자를 입력하세요 : ")
+        if not user: # 입력값이 없을때 체크하는 부분
+            print("입력해주세요!\n")
+            continue
+        try: # 입력값이 숫자가 아닐때 체크해주는 부분
+            my = list(map(int, user.split()))
         except:
             print("입력값이 잘못되었습니다.\n")
             continue

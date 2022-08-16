@@ -1,8 +1,20 @@
-def after_100(month,day,week):
-    week_day = ["월","화","수","목","금","토","일"] 
+def after_100():
+    while True:
+        
+        week_day = ["월","화","수","목","금","토","일"] 
+        days = [31,28,31,30,31,30,31,31,30,31,30,31] # 월별 날짜 갯수를 리스트로 미리 만들기
+        try:
+            month,day,week = map(str,input("시작하는 날을 입력해주세요 (예: 6월21일,월요일 => 6 21 월) : ").split())
+            month = int(month)
+            day = int(day)
+        except :
+            print("입력값이 잘못되었습니다")
+            continue
+        if (month > 0 or month <= 12) and (days[month-1] >= day) and (week in week_day):
+            break
+        else : print("입력값이 잘못되었습니다 예시에 따라 다시 입력해주세요")
+            
     week_100 = week_day[(week_day.index(week)+1)%7] # 100일 뒤의 요일 계산
-    
-    days = [31,28,31,30,31,30,31,31,30,31,30,31] # 월별 날짜 갯수를 리스트로 미리 만들기
     now_day = 0 
     # 1월 1일부터 시작하는 날짜까지의 총 날짜수 구하기
     for i in range(month-1): # 월별 전체 날짜가 계산되는 날 더하기
@@ -19,4 +31,5 @@ def after_100(month,day,week):
             break
     print(f"{month_100}월 {days[month+1]+(day_100)}일 {week_100}요일")
 
-after_100(1,1,"목")
+
+after_100()

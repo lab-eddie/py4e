@@ -1,0 +1,1 @@
+print(("kim","park","lee")<("son","jung","min"))

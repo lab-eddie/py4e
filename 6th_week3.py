@@ -12,3 +12,13 @@
 # LG화학의 수익률 1.83
 # NAVER의 수익률 -2.38
 # 삼성전자의 수익률 -3.53
+
+stocks = "삼성전자/10/85000,카카오/15/130000,LG화학/3/820000,NAVER/5/420000"
+sells = [82000, 160000, 835000, 410000]
+
+stock = stocks.split(",")
+num = 0
+for i in stock:
+    name, qty, price = i.split("/")
+    print(f"{name}의 수익률 {(int(sells[num])-int(price))/int(price)*100 : .3}% 손실{(int(sells[num])-int(price))*int(qty) :,}원")
+    num += 1
